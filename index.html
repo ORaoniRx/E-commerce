@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Page</title>
+
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <div class="login-container">
+        <form id="form-login">
+            <h2>Acessar E-commerce</h2>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="seu@gmail.com" required>
+            <label for="password">Senha</label>
+            <input type="password" id="senha" placeholder="Sua Senha" required>
+
+            <button type="submit" id="btn-entrar">Login</button>
+        </form>
+
+        <p id="msg-erro" class="hidden">E-mail ou Senha inválidos</p>
+
+        <div class="footer-login">
+            <a href="">Esqueceu a senha?</a>
+            <span>Não tem conta?<a href="#">Cadastra-se</a></span>
+        </div>
+    </div>
+
+
+    <script src="./js/Login/Login.js"></script>
+</body>
+
+</html>
