@@ -43,13 +43,13 @@ inputBusca.addEventListener('input', (e) => {
 
 
     cards.forEach(card => {
-        const nomeProduto = card.querySelector('.h3').innerText.toLowercase();
+        const nomeProduto = card.querySelector('h3').innerText.toLowercase();
     
         if(nomeProduto.includes(termo)){
             card.style.display = "block";
         } else {
             card.style.display = "none";
-        }
+        };
 
     });
 
@@ -80,8 +80,22 @@ function atualizarCarrinho (){
         `;
 
         listaCarrinho.appendChild(li);
-        
-
-
     });
+    subtotalDisplay.textContent = soma.toFixed(2);
+
 };
+
+//vinculando aos botoes da vitrine
+document.querySelectorAll('.btn-comprar').forEach(btn => {
+    btn.addEventListener('click', (e)=>{
+        const card = e.target.closest('.produto-card');
+        const nome = card.querySelector('h3').innerText;
+        const preco = parseFloat(card.querySelector('.preco').innerText.replace('R$', '').replace('.', '').replace(',', '.'));
+
+        itensCarrinho.push({nome,preco});
+        atualizarCarrinho();
+    });
+
+
+    
+});
